@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{styles.css}" />
+</head>
+<body>
+
+<h1>Create a person!</h1>
+
+<form action="/createPerson?place=doug" method="post">
+    Title: <input type="text" name="title" value="" /><br />
+    First Name: <input type="text" name="firstname" value="" /><br />
+    Middle Name: <input type="text" name="middlename" value="" /><br />
+    Last Name: <input type="text" name="lastname" value="" /><br />
+    Suffix: <input type="text" name="suffix" value="" /><br />
+    <hr />
+    Address Line 1: <input type="text" name="addressLine1" value="" /><br />
+    Address Line 2: <input type="text" name="addressLine2" value="" /><br />
+    City: <input type="text" name="city" value="" /><br />
+
+    State:
+    <select name="stateProvinceId">
+        <option th:each="state : ${states}" th:value="${state.getStateProvinceId()}" th:text="${state.getName()}">New Jersey</option>
+        <!--<option value="2">North Carolina</option>
+        <option value="3">Michigan</option>-->
+    </select><br/>
+    Postal Code: <input type="text" name="postalCode" value="" /><br />
+
+
+    <button>Go!!!</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Success!!</title>
+</head>
+<body>
+
+<h1>Yay!!!</h1>
+
+<div>
+    <span th:text="${person.getFirstname() + ' ' + person.getLastname()}">Fred Smith</span><br />
+    <span th:text="${address.getAddressLine1()}">123 Happy St.</span><br />
+    <span th:text="${address.getAddressLine2()}"></span><br />
+    <span th:text="${address.getCity()}">East Chapel Durham</span>,
+    <span th:text="${state.getName()}">WC</span>
+    <span th:text="${address.getPostalCode()}">34521</span>
+
+</div>
+
+</body>
+</html>
